@@ -1,0 +1,94 @@
+<head>
+<script src="../models/car.js"></script>
+<script src="../models/wheel.js"></script>
+<script src="../controllers/controller.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body onload="listeners()">
+    <div class="container text-center mt-5">
+        <h1>Exercici Vehicles amb TypeScript</h1>
+        <div class="container mt-5 text-center d-none" id="inici">
+            <table class="table text-center table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Matricula</th>
+                        <th>Marca</th>
+                        <th>Color</th>
+                        <th>Rodes</th>
+                    </tr>
+                </thead>
+                <tbody class="table-secondary" id="llistaCotxes" onload="llistaCotxes()">
+                </tbody>
+            </table>       
+            <button class="btn btn-success" type="button" onclick="creaCotxe()">Nou</button>
+        </div>
+        <div class="container mt-5 text-center" id="creaCotxe">
+            <form name="formulari" id="formulari" class="needs-validation" novalidate onsubmit="validaCotxe(event)" method="post">
+                <table class="table text-center table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Matricula</th>
+                            <th>Marca</th>
+                            <th>Color</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-secondary">
+                        <tr>
+                            <td>
+                                <div class="input-group has-validation">
+                                    <input type="text" name="matricula" class="form-control">
+                                    <div class="invalid-feedback">4 números i 3 lletres</div>
+                                </div>
+                            </td>
+                            <td><input type="text" name="marca" class="form-control"></td>
+                            <td><input type="text" name="color" class="form-control"></td>
+                        </tr>
+                    </tbody>
+                </table>       
+                <input class="btn btn-success" type="submit" value="Crea">
+            </form>
+        </div>
+        <div class="container mt-5 text-center d-none" id="creaRodes">
+            <form name="formulari" id="formulari" class="form needs-validation" novalidate onsubmit="validaRodes(event)" method="post">
+                <table class="table text-center table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Roda</th>
+                            <th>Marca</th>
+                            <th>Diametre</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-secondary">
+                        <tr>
+                            <th>1</th>
+                            <td><input type="text" name="marca" class="form-control"></td>
+                            <td><input type="number" name="diametre" step="any" class="form-control">
+                                <div class="invalid-feedback">Rang: (0,4 - 2)</div></td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td><input type="text" name="marca" class="form-control"></td>
+                            <td><input type="number" name="diametre" step="any" class="form-control">
+                                <div class="invalid-feedback">Rang: (0,4 - 2)</div></td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <td><input type="text" name="marca" class="form-control"></td>
+                            <td><input type="number" name="diametre" step="any" class="form-control">
+                                <div class="invalid-feedback">Rang: (0,4 - 2)</div></td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+                            <td><input type="text" name="marca" class="form-control"></td>
+                            <td><input type="number" name="diametre" step="any" class="form-control">
+                                <div class="invalid-feedback">Rang: (0,4 - 2)</div></td>
+                        </tr>
+
+                    </tbody>
+                </table>       
+                <input class="btn btn-success" type="submit" value="Afegeix">
+            </form>
+        </div>
+        <p id="carInfo" class="text-left"></p>
+    </div>
+</body>
